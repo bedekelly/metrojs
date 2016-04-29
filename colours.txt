@@ -1,0 +1,14 @@
+Bakerloo 		#B36305
+Central 		#E32017
+Circle 			#FFD300
+District 		#00782A
+DLR 			#00A4A7
+Hammersmith and City 	#F3A9BB
+Jubilee 		#A0A5A9
+Metropolitan 		#9B0056
+Northern 		#000000
+Overground 		#EE7C0E
+Piccadilly 		#003688
+Tramlink 		#84B817
+Victoria 		#0098D4
+Waterloo and City 	#95CDBA
