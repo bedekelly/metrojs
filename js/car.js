@@ -1,6 +1,6 @@
-var MAX_SPEED = 3;
+var MAX_SPEED = 1.5;
 var TOLERANCE = 0.5;
-var ACCELERATION = 0.02;
+var ACCELERATION = 0.01;
 var MIN_SPEED = 0.3;
 
 
