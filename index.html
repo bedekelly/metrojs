@@ -21,7 +21,11 @@
 </head>
 <body>
 
-
+<script>
+  if (!window.chrome) {
+    alert("Chrom(e|ium) is the only browser that animates canvas smoothly! You have been warned.");
+  }
+</script>
 
 <script src="js/canvaspaths/pathsegment.js"></script>
 <script src="js/canvaspaths/path.js"></script>
