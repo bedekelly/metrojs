@@ -1,5 +1,5 @@
 var FPS = 60;
-var WAITING_TIME = 1 * FPS;  // 1 second.
+var WAITING_TIME = 0.5 * FPS;  // 1 second.
 
 var cars = [];
 var circleLineStations = [];
@@ -25,7 +25,7 @@ var circleLine = new Line(circleLinePoints, circleLineStations, "#FFD300", "circ
 
 // Add the car to the line at Aville and tell it to go between Aville and Efmal.
 circleLine.addCar(carA, stationA);
-circleLine.addPairJob(stationA, stationF);
+circleLine.addRoute(circleLineStations);
 
 
 var victoriaLinePoints = [
@@ -42,22 +42,21 @@ var carB = new Car(); cars.push(carB);
 
 var victoriaLine = new Line(victoriaLinePoints, vicLineStations, "#0098D4", "victoria");
 victoriaLine.addCar(carB, stationG);
-victoriaLine.addPairJob(stationG, stationI);
+victoriaLine.addRoute(vicLineStations);
 
 
 var centralLinePoints = [
     [50, 200], [250, 200], [250, 600]
 ];
 
-
-var centralLineStations = [stationB, stationD];
-var stationJ = new Station(50, 200, "Jayston", "end"); centralLineStations.push(stationJ);
-var stationK = new Station(250, 600, "Kayville", "end"); centralLineStations.push(stationK);
+var stationJ = new Station(50, 200, "Jayston", "end");
+var stationK = new Station(250, 600, "Kayville", "end");
+var centralLineStations = [stationJ, stationB, stationD, stationK];
 
 var centralLine = new Line(centralLinePoints, centralLineStations, "#E32017", "central");
 var carC = new Car(); cars.push(carC);
 centralLine.addCar(carC, stationJ);
-centralLine.addPairJob(stationJ, stationK);
+centralLine.addRoute(centralLineStations);
 
 
 function update() {

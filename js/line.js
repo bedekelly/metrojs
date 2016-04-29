@@ -32,13 +32,34 @@ Line.prototype.addCar = function(car, station) {
 
 
 Line.prototype.addPairJob = function(stationA, stationB) {
+    this.jobType = "pair";
     this.jobMap[stationA.name] = stationB;
     this.jobMap[stationB.name] = stationA;
 };
 
 
+Line.prototype.addRoute = function(route) {
+    this.jobType = "route";
+    this.route = route;
+};
+
+
 Line.prototype.getJob = function(car) {
-    return this.jobMap[car.station.name];
+    if (this.jobType == "pair")
+        return this.jobMap[car.station.name];
+    else if (this.jobType == "route") {
+        var next = 1;
+        var reverse = ((car.station.name == this.route[this.route.length-1].name)
+                       || (car.reverse && car.station.name != this.route[0].name));
+
+        if (reverse) next *= -1;
+        for (var i=0; i<this.route.length; i++) {
+            var station = this.route[i];
+            if (station.name == car.station.name) break;
+        }
+        return this.route[i+next];
+    }
+
 };
 
 
