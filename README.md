@@ -13,6 +13,7 @@ I've added some helper methods for getting specific info at points, which will e
 the wrapper's repository.
 
 Todo:
-	* Add a `line.addRoute` method, probably using the car's "reverse" property.
-	* Make stations clickable!
-	* Add new routes and cars!
+
+* Add a `line.addRoute` method, probably using the car's "reverse" property.
+* Make stations clickable!
+* Add new routes and cars!
